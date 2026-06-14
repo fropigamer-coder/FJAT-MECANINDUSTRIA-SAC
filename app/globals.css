@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fjat-orange: #FF501D;
+  --color-industrial-gray: #1a1a1a;
+  --color-steel-light: #f4f4f4;
+  
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-industrial-gray);
+    color: white;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+  }
+}
