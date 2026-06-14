@@ -5,41 +5,48 @@ import { useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
 
-function MechanicalAssembly() {
+function Gear() {
   const group = useRef<THREE.Group>(null);
-  useFrame((state, delta) => {
-    if (group.current) {
-      group.current.rotation.y += delta * 0.3;
-      group.current.rotation.x += delta * 0.2;
-    }
-  });
-  return (
-    <group ref={group}>
-      {/* Bloque central naranja */}
-      <mesh>
-        <boxGeometry args={[1.5, 1.5, 1.5]} />
+  const numTeeth = 16;
+  const teeth = [];
+
+  for (let i = 0; i < numTeeth; i++) {
+    const angle = (i / numTeeth) * Math.PI * 2;
+    const x = Math.cos(angle) * 1.3;
+    const y = Math.sin(angle) * 1.3;
+    teeth.push(
+      <mesh key={i} position={[x, y, 0]} rotation={[0, 0, angle]}>
+        <boxGeometry args={[0.6, 0.4, 0.5]} />
         <meshStandardMaterial color="#FF501D" metalness={0.9} roughness={0.1} />
       </mesh>
-      {/* Ejes mecánicos */}
-      <mesh position={[0, 0, 1.2]}>
-        <cylinderGeometry args={[0.3, 0.3, 1]} />
-        <meshStandardMaterial color="#333" metalness={0.8} roughness={0.2} />
+    );
+  }
+
+  useFrame((state, delta) => {
+    if (group.current) {
+      group.current.rotation.z += delta * 0.5;
+    }
+  });
+
+  return (
+    <group ref={group}>
+      {/* Cuerpo del engranaje */}
+      <mesh rotation={[Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[1, 1, 0.5, 32]} />
+        <meshStandardMaterial color="#FF501D" metalness={0.9} roughness={0.1} />
       </mesh>
-      <mesh position={[0, 0, -1.2]} rotation={[Math.PI / 2, 0, 0]}>
-        <cylinderGeometry args={[0.3, 0.3, 1]} />
-        <meshStandardMaterial color="#333" metalness={0.8} roughness={0.2} />
-      </mesh>
+      {teeth}
     </group>
   );
 }
 
 export default function IndustrialScene() {
   return (
-    <Canvas camera={{ position: [3, 3, 3], fov: 50 }}>
+    <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
       <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
-      <MechanicalAssembly />
-      <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
+      <directionalLight position={[5, 5, 5]} intensity={1.5} />
+      <Gear />
+      <OrbitControls enableZoom={false} />
     </Canvas>
   );
 }
