@@ -121,9 +121,17 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} FJAT Mecanindustria S.A.C. Todos
             los derechos reservados.
           </p>
-          <p className="text-xs text-steel-700 font-mono uppercase tracking-wider">
-            Ingeniería de Precisión A1
-          </p>
+          <div className="flex items-center gap-3">
+            <p className="text-xs text-steel-700 font-mono uppercase tracking-wider">
+              Ingeniería de Precisión A1
+            </p>
+            <span className="text-steel-700">|</span>
+            <p className="text-xs font-mono tracking-wider">
+              Desarrollado por{" "}
+              <span className="text-fjat-orange font-semibold">NEXUAN</span>
+              <span className="text-steel-600"> — Startup #1</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
