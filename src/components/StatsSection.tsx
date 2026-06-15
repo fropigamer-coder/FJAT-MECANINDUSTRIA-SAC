@@ -73,7 +73,7 @@ export default function StatsSection() {
   return (
     <section
       ref={ref}
-      className="relative py-24 md:py-32 overflow-hidden border-t border-white/[0.04] border-b border-white/[0.04]"
+      className="relative py-16 sm:py-20 md:py-32 overflow-hidden border-t border-white/[0.04] border-b border-white/[0.04]"
     >
       {/* Background gauge lines */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
@@ -88,7 +88,7 @@ export default function StatsSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

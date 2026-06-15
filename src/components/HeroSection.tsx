@@ -224,24 +224,24 @@ export default function HeroSection() {
       {/* Content */}
       <div
         ref={textRef}
-        className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 pb-32 md:pb-40"
+        className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-16 pb-32 md:pb-40"
       >
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto md:mx-0 text-center md:text-left">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-fjat-orange/20 bg-fjat-orange/5 mb-6 hero-reveal"
+            className="inline-flex items-center justify-center md:justify-start gap-2 px-3 py-1.5 rounded-sm border border-fjat-orange/20 bg-fjat-orange/5 mb-4 md:mb-6 hero-reveal"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-fjat-orange animate-pulse" />
-            <span className="text-xs font-mono text-fjat-orange uppercase tracking-[0.15em]">
+            <span className="w-1.5 h-1.5 rounded-full bg-fjat-orange animate-pulse shrink-0" />
+            <span className="text-[10px] xs:text-xs font-mono text-fjat-orange uppercase tracking-[0.15em]">
               Certificación A1 · Ingeniería de Precisión
             </span>
           </motion.div>
 
           {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-white leading-[0.95] tracking-tight mb-6 hero-reveal">
+          <h1 className="text-[2.5rem] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-white leading-[1.05] xs:leading-[0.95] tracking-tight mb-4 md:mb-6 hero-reveal">
             Ingeniería que
             <br />
             <span className="text-fjat-orange relative inline-block">
@@ -252,16 +252,16 @@ export default function HeroSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-steel-400 max-w-xl leading-relaxed mb-10 hero-reveal font-light">
+          <p className="text-base sm:text-lg md:text-xl text-steel-400 max-w-xl mx-auto md:mx-0 leading-relaxed mb-8 md:mb-10 hero-reveal font-light">
             Fabricación CNC de precisión, mantenimiento industrial estratégico
             y montajes metálicos. Soluciones A1 para las empresas más exigentes.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4 hero-reveal">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 hero-reveal items-center md:items-start">
             <a
               href="#servicios"
-              className="group relative inline-flex items-center gap-2 px-8 py-3.5 bg-fjat-orange text-white font-medium rounded-sm overflow-hidden transition-all duration-300 hover:bg-fjat-orange-dark hover:shadow-glow-orange"
+              className="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-fjat-orange text-white font-medium rounded-sm overflow-hidden transition-all duration-300 hover:bg-fjat-orange-dark hover:shadow-glow-orange text-sm sm:text-base"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <Settings2 size={18} />
@@ -270,7 +270,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#contacto"
-              className="group inline-flex items-center gap-2 px-8 py-3.5 border border-steel-600 text-steel-300 hover:border-fjat-orange/50 hover:text-fjat-orange rounded-sm transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 border border-steel-600 text-steel-300 hover:border-fjat-orange/50 hover:text-fjat-orange rounded-sm transition-all duration-300 text-sm sm:text-base"
             >
               Solicitar Cotización
               <ArrowDown
@@ -286,7 +286,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-16 md:mt-20 flex flex-wrap gap-8 md:gap-12 items-center"
+          className="mt-12 md:mt-20 flex flex-wrap justify-center md:justify-start gap-6 md:gap-12 items-center"
         >
           {[
             { label: "Precisión", value: "±0.01mm", icon: Gauge },
@@ -300,7 +300,7 @@ export default function HeroSection() {
                   className="text-fjat-orange/60 hidden sm:block"
                 />
               )}
-              <div>
+              <div className="text-center md:text-left">
                 <div className="font-mono text-sm text-fjat-orange font-semibold tracking-wider">
                   {stat.value}
                 </div>

@@ -42,14 +42,14 @@ export default function PhilosophySection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-white/[0.08] bg-white/[0.03] mb-6"
           >
-            <span className="text-xs font-mono text-steel-400 uppercase tracking-[0.15em]">
+            <span className="text-[10px] sm:text-xs font-mono text-steel-400 uppercase tracking-[0.15em]">
               Nuestra Filosofía
             </span>
           </motion.div>
@@ -58,7 +58,7 @@ export default function PhilosophySection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-4 sm:mb-6"
           >
             Compromiso{" "}
             <span className="text-fjat-orange">A1</span>
@@ -68,7 +68,7 @@ export default function PhilosophySection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-steel-400 leading-relaxed max-w-2xl mx-auto font-light"
+            className="text-base sm:text-lg md:text-xl text-steel-400 leading-relaxed max-w-2xl mx-auto font-light px-2 sm:px-0"
           >
             En FJAT Mecanindustria no solo fabricamos piezas — diseñamos
             soluciones críticas para el corazón de la industria. Nuestra
@@ -79,14 +79,14 @@ export default function PhilosophySection() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {values.map((v, i) => (
             <motion.div
               key={v.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              className="group relative p-6 md:p-8 rounded-sm border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-fjat-orange/20 transition-all duration-500"
+              className="group relative p-5 sm:p-6 md:p-8 rounded-sm border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-fjat-orange/20 transition-all duration-500 text-center sm:text-left"
             >
               {/* CNC border on hover */}
               <div className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">

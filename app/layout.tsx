@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     "industria Perú",
     "FJAT Mecanindustria",
   ],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "FJAT Mecanindustria | Ingeniería de Precisión",
     description:

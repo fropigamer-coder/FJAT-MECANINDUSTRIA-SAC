@@ -42,14 +42,14 @@ export default function ProjectGallery() {
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-white/[0.08] bg-white/[0.03] mb-6"
           >
-            <span className="text-xs font-mono text-steel-400 uppercase tracking-[0.15em]">
+            <span className="text-[10px] sm:text-xs font-mono text-steel-400 uppercase tracking-[0.15em]">
               Proyectos Aprobados
             </span>
           </motion.div>
@@ -58,7 +58,7 @@ export default function ProjectGallery() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-4 sm:mb-6"
           >
             Casos de{" "}
             <span className="text-fjat-orange">Éxito</span>
@@ -68,7 +68,7 @@ export default function ProjectGallery() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-steel-400 max-w-2xl mx-auto font-light"
+            className="text-base sm:text-lg text-steel-400 max-w-2xl mx-auto font-light px-2 sm:px-0"
           >
             Proyectos que demuestran nuestra capacidad técnica y compromiso con
             la excelencia.
@@ -76,7 +76,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {projects.map((p, i) => {
             const Icon = projectIcons[i];
             return (

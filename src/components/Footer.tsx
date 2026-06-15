@@ -27,10 +27,10 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/[0.04] bg-steel-950">
       {/* Top section */}
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-12 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-12">
           {/* Brand column */}
-          <div className="md:col-span-1">
+          <div className="sm:col-span-2 md:col-span-1 text-center sm:text-left">
             <a href="#inicio" className="inline-flex items-center gap-3 mb-4">
               <div className="relative w-10 h-10">
                 <Image

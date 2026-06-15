@@ -31,10 +31,10 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 md:h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#inicio" className="group flex items-center gap-3">
-          <div className="relative w-10 h-10 md:w-12 md:h-12">
+        <a href="#inicio" className="group flex items-center gap-2 sm:gap-3">
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
             <Image
               src="/logo.png"
               alt="FJAT Mecanindustria"
@@ -44,7 +44,7 @@ export default function Navbar() {
             />
           </div>
           <span
-            className={`font-heading font-bold text-lg md:text-xl tracking-tight transition-colors duration-300 ${
+            className={`font-heading font-bold text-base sm:text-lg md:text-xl tracking-tight transition-colors duration-300 ${
               scrolled ? "text-steel-100" : "text-white"
             }`}
           >

@@ -26,15 +26,15 @@ export default function PartnersSection() {
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-2 mb-4"
+            className="flex flex-wrap items-center justify-center gap-2 mb-4 px-4 sm:px-0"
           >
-            <Shield size={16} className="text-fjat-orange/60" />
-            <span className="text-xs font-mono text-steel-500 uppercase tracking-[0.2em]">
+            <Shield size={16} className="text-fjat-orange/60 shrink-0" />
+            <span className="text-[10px] sm:text-xs font-mono text-steel-500 uppercase tracking-[0.2em] text-center">
               Empresas que confían en nuestra ingeniería
             </span>
           </motion.div>
@@ -43,7 +43,7 @@ export default function PartnersSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-sm text-steel-500 max-w-xl mx-auto"
+            className="text-xs sm:text-sm text-steel-500 max-w-xl mx-auto px-4 sm:px-0"
           >
             Más de 15 años siendo el socio técnico de las empresas líderes del
             Perú
@@ -55,7 +55,7 @@ export default function PartnersSection() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-12 items-center"
         >
           {partners.map((partner, i) => (
             <motion.div

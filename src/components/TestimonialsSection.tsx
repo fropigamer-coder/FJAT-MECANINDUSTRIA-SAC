@@ -47,14 +47,14 @@ export default function TestimonialsSection() {
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-white/[0.08] bg-white/[0.03] mb-6"
           >
-            <span className="text-xs font-mono text-steel-400 uppercase tracking-[0.15em]">
+            <span className="text-[10px] sm:text-xs font-mono text-steel-400 uppercase tracking-[0.15em]">
               Testimonios
             </span>
           </motion.div>
@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-4 sm:mb-6 px-2 sm:px-0"
           >
             Lo que dicen{" "}
             <span className="text-fjat-orange">nuestros clientes</span>
@@ -71,8 +71,8 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative min-h-[280px] md:min-h-[240px]">
+        <div className="max-w-4xl mx-auto px-2 sm:px-0">
+          <div className="relative min-h-[320px] sm:min-h-[280px] md:min-h-[240px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
