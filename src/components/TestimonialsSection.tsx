@@ -8,25 +8,16 @@ const testimonials = [
   {
     quote:
       "FJAT transformó nuestra línea de producción. Pasamos de 3 paradas semanales a cero en el primer mes. Su enfoque A1 no es marketing — es su estándar de trabajo.",
-    author: "Carlos Mendoza",
-    role: "Gerente de Operaciones",
-    company: "Compañía Nacional de Chocolates",
     rating: 5,
   },
   {
     quote:
-      "La precisión en la fabricación CNC de FJAT superó nuestras expectativas. Las piezas llegaron dentro de tolerancia y antes de lo pactado. Un socio técnico de verdad.",
-    author: "María Gutiérrez",
-    role: "Jefa de Ingeniería",
-    company: "Molitalia",
+      "La precisión en la fabricación CNC de FJAT superó nuestras expectativas. Las piezas llegaron dentro de tolerancia y antes de lo pactado. Un proveedor técnico de verdad.",
     rating: 5,
   },
   {
     quote:
       "Para el montaje de nuestra nueva nave industrial necesitábamos un equipo con certificación y experiencia. FJAT no solo cumplió — nos asesoró para optimizar la estructura.",
-    author: "Ricardo Álvarez",
-    role: "Director de Proyectos",
-    company: "SMC Perú",
     rating: 5,
   },
 ];
@@ -103,13 +94,7 @@ export default function TestimonialsSection() {
                   )}
                 </div>
 
-                <div className="text-white font-heading font-semibold">
-                  {testimonials[current].author}
-                </div>
-                <div className="text-sm text-steel-500">
-                  {testimonials[current].role},{" "}
-                  {testimonials[current].company}
-                </div>
+                
               </motion.div>
             </AnimatePresence>
           </div>

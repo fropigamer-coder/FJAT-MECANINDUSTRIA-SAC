@@ -2,10 +2,10 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   Send,
   MapPin,
-  Phone,
   Mail,
   Clock,
   CheckCircle2,
@@ -16,10 +16,34 @@ export default function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const templateParams = {
+      to_name: "Fernando",
+      from_name: formData.get("name"),
+      from_email: formData.get("email"),
+      message: formData.get("mensaje"),
+    };
+
+    try {
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      console.log("EmailJS success:", result);
+      setSent(true);
+      form.reset();
+      setTimeout(() => setSent(false), 4000);
+    } catch (err: any) {
+      console.error("EmailJS error:", err);
+      alert("Error: " + (err?.text || err?.message || "Error al enviar"));
+    }
   };
 
   const contactInfo = [
@@ -30,15 +54,9 @@ export default function ContactSection() {
       detail: "Disponibilidad nacional",
     },
     {
-      icon: Phone,
-      label: "Teléfono",
-      value: "+51 999 000 000",
-      detail: "Lun–Sab 8:00 – 18:00",
-    },
-    {
       icon: Mail,
       label: "Email",
-      value: "ingenieria@fjat.pe",
+      value: "fernando.amoros@fjatmecanindustriasac.com",
       detail: "Respuesta en < 24h",
     },
     {
@@ -107,6 +125,7 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
                   placeholder="Tu nombre"
                   className="w-full px-4 py-2.5 bg-steel-900 border border-white/[0.08] rounded-sm text-steel-200 text-sm placeholder:text-steel-600 focus:outline-none focus:border-fjat-orange/40 focus:bg-steel-900 transition-all duration-300"
@@ -118,6 +137,7 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="text"
+                  name="empresa"
                   placeholder="Tu empresa"
                   className="w-full px-4 py-2.5 bg-steel-900 border border-white/[0.08] rounded-sm text-steel-200 text-sm placeholder:text-steel-600 focus:outline-none focus:border-fjat-orange/40 focus:bg-steel-900 transition-all duration-300"
                 />
@@ -130,6 +150,7 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   placeholder="correo@ejemplo.pe"
                   className="w-full px-4 py-2.5 bg-steel-900 border border-white/[0.08] rounded-sm text-steel-200 text-sm placeholder:text-steel-600 focus:outline-none focus:border-fjat-orange/40 focus:bg-steel-900 transition-all duration-300"
@@ -141,6 +162,7 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="tel"
+                  name="telefono"
                   placeholder="+51 999 000 000"
                   className="w-full px-4 py-2.5 bg-steel-900 border border-white/[0.08] rounded-sm text-steel-200 text-sm placeholder:text-steel-600 focus:outline-none focus:border-fjat-orange/40 focus:bg-steel-900 transition-all duration-300"
                 />
@@ -150,11 +172,14 @@ export default function ContactSection() {
               <label className="block text-xs font-mono text-steel-500 uppercase tracking-wider mb-2">
                 Servicio de interés
               </label>
-              <select className="w-full px-4 py-2.5 bg-steel-900 border border-white/[0.08] rounded-sm text-steel-200 text-sm focus:outline-none focus:border-fjat-orange/40 transition-all duration-300">
+              <select
+                name="servicio"
+                className="w-full px-4 py-2.5 bg-steel-900 border border-white/[0.08] rounded-sm text-steel-200 text-sm focus:outline-none focus:border-fjat-orange/40 transition-all duration-300"
+              >
                 <option value="">Selecciona un servicio</option>
                 <option>Mantenimiento Industrial</option>
                 <option>Fabricación CNC</option>
-                <option>Montajes Metálicos</option>
+                <option>Montaje de Maquinaria Industrial</option>
                 <option>Asesoría Técnica</option>
                 <option>Otro</option>
               </select>
@@ -164,6 +189,7 @@ export default function ContactSection() {
                 Mensaje
               </label>
               <textarea
+                name="mensaje"
                 required
                 rows={4}
                 placeholder="Describe tu proyecto o necesidad técnica..."
@@ -208,7 +234,7 @@ export default function ContactSection() {
                   <div className="text-xs font-mono text-steel-500 uppercase tracking-wider mb-0.5">
                     {info.label}
                   </div>
-                  <div className="text-sm text-steel-200 font-medium">
+                  <div className="text-sm text-steel-200 font-medium break-all">
                     {info.value}
                   </div>
                   <div className="text-xs text-steel-500">{info.detail}</div>

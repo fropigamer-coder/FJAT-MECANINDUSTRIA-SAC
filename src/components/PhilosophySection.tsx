@@ -23,7 +23,7 @@ const values = [
   {
     icon: Compass,
     title: "Visión Estratégica",
-    desc: "Socios tecnológicos de largo plazo, no solo proveedores. Ingeniería que añade valor real.",
+    desc: "Proveedores tecnológicos de largo plazo. Ingeniería que añade valor real.",
   },
 ];
 
@@ -70,11 +70,10 @@ export default function PhilosophySection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-steel-400 leading-relaxed max-w-2xl mx-auto font-light px-2 sm:px-0"
           >
-            En FJAT Mecanindustria no solo fabricamos piezas — diseñamos
-            soluciones críticas para el corazón de la industria. Nuestra
-            filosofía se basa en la precisión técnica, tiempos garantizados y
-            una obsesión por la calidad que nos convierte en socios estratégicos
-            de las empresas más exigentes del Perú.
+            Especialistas en metalmecánica. Proyectos a medida con materiales
+            de alta calidad, durabilidad y resistencia garantizada. Eficiencia,
+            seguridad y control riguroso en cada ejecución, con entrega
+            oportuna y vocación de servicio.
           </motion.p>
         </div>
 

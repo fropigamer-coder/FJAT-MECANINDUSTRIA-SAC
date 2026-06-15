@@ -45,8 +45,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-steel-500 leading-relaxed mb-6 max-w-xs">
-              Ingeniería de precisión y soluciones industriales A1. Más de 15
-              años siendo el socio técnico de la industria peruana.
+              Ingeniería de precisión y soluciones industriales A1. Más de 5+
+              años siendo el proveedor técnico de la industria peruana.
             </p>
             <div className="flex items-center gap-2 text-xs text-steel-600 font-mono">
               <Shield size={12} className="text-fjat-orange/60" />
@@ -86,21 +86,10 @@ export default function Footer() {
                   Email
                 </span>
                 <a
-                  href="mailto:ingenieria@fjat.pe"
-                  className="hover:text-fjat-orange transition-colors"
+                  href="mailto:fernando.amoros@fjatmecanindustriasac.com"
+                  className="hover:text-fjat-orange transition-colors break-all"
                 >
-                  ingenieria@fjat.pe
-                </a>
-              </li>
-              <li>
-                <span className="block text-steel-600 text-xs font-mono uppercase tracking-wider mb-0.5">
-                  Teléfono
-                </span>
-                <a
-                  href="tel:+51999000000"
-                  className="hover:text-fjat-orange transition-colors"
-                >
-                  +51 999 000 000
+                  fernando.amoros@fjatmecanindustriasac.com
                 </a>
               </li>
               <li>

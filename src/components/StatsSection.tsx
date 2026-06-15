@@ -9,18 +9,21 @@ const stats = [
     value: 150,
     suffix: "+",
     desc: "Con certificación A1",
+    maxValue: 150,
   },
   {
     label: "Años de Experiencia",
-    value: 15,
+    value: 5,
     suffix: "+",
     desc: "En ingeniería industrial",
+    maxValue: 6,
   },
   {
     label: "Satisfacción",
     value: 100,
     suffix: "%",
     desc: "Garantía de calidad",
+    maxValue: 100,
   },
 ];
 
@@ -125,7 +128,7 @@ export default function StatsSection() {
                     initial={{ strokeDashoffset: 264 }}
                     animate={
                       isInView
-                        ? { strokeDashoffset: 264 * (1 - stat.value / 150) }
+                        ? { strokeDashoffset: 264 * (1 - stat.value / stat.maxValue) }
                         : {}
                     }
                     transition={{ duration: 2, delay: 0.5 + i * 0.15, ease: "easeOut" }}

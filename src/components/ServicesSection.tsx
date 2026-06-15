@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import {
   Wrench,
   Cpu,
-  Building2,
+  Cog,
   ClipboardCheck,
   Ruler,
   Shield,
@@ -16,7 +16,7 @@ const services = [
     icon: Wrench,
     title: "Mantenimiento Industrial",
     description:
-      "Paradas de planta programadas, mantenimiento preventivo y correctivo de maquinaria crítica. Ejecutamos con protocolos A1 que garantizan continuidad operativa.",
+      "Servicio de mantenimiento preventivo y correctivo de maquinaria industrial para los sectores minero y pesquero. Especialistas en cajas reductoras y bombas centrifugas, tubulares, baldas y sumergibles, con protocolos A1 que garantizan continuidad operativa.",
     specs: [
       { label: "Garantía", value: "100%" },
       { label: "Tiempo Respuesta", value: "< 4h" },
@@ -24,19 +24,19 @@ const services = [
   },
   {
     icon: Cpu,
-    title: "Fabricación CNC",
+    title: "Fabricación de Estructuras y Componentes Industriales",
     description:
-      "Creación de piezas únicas bajo plano con fresado, torneado y corte de precisión. Materiales especiales, tolerancias internacionales y certificación de calidad.",
+      "Fabricación de estructuras generales, fajas transportadoras y piezas industriales como ejes, bocinas, polines y piñones. Maquinado CNC de precisión con tolerancias internacionales y certificación de calidad.",
     specs: [
       { label: "Precisión", value: "±0.01mm" },
       { label: "Materiales", value: "Acero, Inox, Aluminio" },
     ],
   },
   {
-    icon: Building2,
-    title: "Montajes Metálicos",
+    icon: Cog,
+    title: "Montaje de Maquinaria Industrial",
     description:
-      "Instalación y montaje de estructuras metálicas, equipos industriales y sistemas de tubería para proyectos de gran envergadura con seguridad certificada.",
+      "Instalación, posicionamiento y alineación de maquinaria y equipos industriales. Ejecutamos montajes de media y alta complejidad con precisión milimétrica y seguridad certificada.",
     specs: [
       { label: "Capacidad", value: "Hasta 50 ton" },
       { label: "Certificación", value: "OSHA A1" },

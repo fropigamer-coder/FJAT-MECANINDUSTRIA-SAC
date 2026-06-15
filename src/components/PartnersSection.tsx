@@ -45,7 +45,7 @@ export default function PartnersSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xs sm:text-sm text-steel-500 max-w-xl mx-auto px-4 sm:px-0"
           >
-            Más de 15 años siendo el socio técnico de las empresas líderes del
+            Más de 5 años siendo el proveedor técnico de las empresas líderes del
             Perú
           </motion.p>
         </div>
