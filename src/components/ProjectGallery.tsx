@@ -7,9 +7,9 @@ import { ArrowUpRight, Factory, Cog, Wrench } from "lucide-react";
 const projects = [
   {
     icon: Factory,
-    title: "Parada de Planta Minera",
-    desc: "Mantenimiento crítico de chancadora primaria y sistema de transporte. Ejecutado en tiempo récord con 0 incidentes.",
-    tags: ["Minería", "Mantenimiento", "Emergencia"],
+    title: "Parada de Planta Chocolates",
+    desc: "Mantenimiento crítico de línea de producción en planta de alimentos. Ejecutado en tiempo récord con 0 incidentes.",
+    tags: ["Alimentos", "Mantenimiento", "Emergencia"],
     metric: "Completado en 72h",
   },
   {
@@ -21,10 +21,10 @@ const projects = [
   },
   {
     icon: Wrench,
-    title: "Montaje Estructural",
-    desc: "Instalación de estructura metálica para nave industrial de 2,500m². Soldadura certificada y montaje en altura.",
-    tags: ["Estructuras", "Montaje", "Gran Escala"],
-    metric: "2,500 m²",
+    title: "Plataforma para Dosificador",
+    desc: "Diseño y montaje de plataforma estructural metálica para sistema de dosificación industrial. Soldadura certificada y montaje en altura.",
+    tags: ["Estructuras", "Montaje", "Dosificación"],
+    metric: "Plataforma Industrial",
   },
 ];
 

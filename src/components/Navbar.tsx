@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -33,12 +34,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" className="group flex items-center gap-3">
-          <div className="relative w-8 h-8 md:w-10 md:h-10">
-            <div className="absolute inset-0 border-2 border-fjat-orange rounded-sm rotate-45 group-hover:rotate-[135deg] transition-transform duration-500" />
-            <div className="absolute inset-1 border border-steel-600 rounded-sm rotate-45" />
-            <span className="absolute inset-0 flex items-center justify-center text-fjat-orange font-heading font-bold text-xs md:text-sm tracking-tighter">
-              FJ
-            </span>
+          <div className="relative w-10 h-10 md:w-12 md:h-12">
+            <Image
+              src="/logo.png"
+              alt="FJAT Mecanindustria"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <span
             className={`font-heading font-bold text-lg md:text-xl tracking-tight transition-colors duration-300 ${

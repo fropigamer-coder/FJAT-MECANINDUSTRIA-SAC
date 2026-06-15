@@ -65,7 +65,7 @@ export default function PartnersSection() {
               transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
               className="group flex justify-center"
             >
-              <div className="relative p-4 rounded-sm border border-transparent hover:border-white/[0.06] transition-all duration-300">
+              <div className="relative p-4">
                 <Image
                   src={partner.src}
                   alt={partner.name}

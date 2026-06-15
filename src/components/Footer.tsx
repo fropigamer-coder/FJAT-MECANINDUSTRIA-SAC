@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Shield } from "lucide-react";
 
 const footerLinks = [
@@ -31,11 +32,13 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-1">
             <a href="#inicio" className="inline-flex items-center gap-3 mb-4">
-              <div className="relative w-8 h-8">
-                <div className="absolute inset-0 border-2 border-fjat-orange rounded-sm rotate-45" />
-                <span className="absolute inset-0 flex items-center justify-center text-fjat-orange font-heading font-bold text-xs">
-                  FJ
-                </span>
+              <div className="relative w-10 h-10">
+                <Image
+                  src="/logo.png"
+                  alt="FJAT Mecanindustria"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="font-heading font-bold text-lg text-white">
                 FJAT<span className="text-fjat-orange">.</span>
